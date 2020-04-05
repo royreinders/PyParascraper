@@ -20,7 +20,7 @@ interval = 10   # minutes
 def notify(new_listings):
     bot = telegram.Bot(token=telegram_API_TOKEN)
     for listing in new_listings:
-        listing = listing
+        listing = 'https://pararius.nl' + listing[76:].split('\"')[0]
         bot.send_message(chat_id=telegram_chat_ID, text=f'New apartment available!\n{listing}')
         print(listing)
 
